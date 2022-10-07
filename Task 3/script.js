@@ -11,3 +11,13 @@ Pastaba: Informacija apie user'į (jo kortelė) bei turi turėti bent minimalų 
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+
+const buttonShowUsers = document.querySelector('#btn');
+buttonShowUsers.addEventListener('click', () => {
+    fetch(ENDPOINT)
+        .then(responce => responce.json())
+        .then(data => {
+            console.log(data);
+        })    
+})
+
