@@ -21,21 +21,22 @@ const users = [
 ];
 
 function filterDogOwners(array) {
-  console.log('Augintinius turi šie vartotojai:');
+  const dogOwners = [];
   for (let i = 0; i < array.length; i++) {
     if (array[i].hasDog) {
-      console.log(array[i].name);
+      dogOwners.push(array[i].name);
     }
   }
+  return dogOwners;
 }
 
-filterDogOwners(users);
+console.log(filterDogOwners(users));
 
 function filterAdults(array) {
-  let filterAdults = array.filter(function(user) {
+  let filterAdults = array.filter((user) => {
     return user.age >= 18;
   })
-  console.log(filterAdults);
+  return filterAdults;
 }
 
-filterAdults(users)
+console.log(filterAdults(users));
