@@ -33,6 +33,4 @@ form.addEventListener('submit', (event) => {
     outputElement.style.padding = '20px';
     outputElement.style.margin = 'auto';
     outputList.style.listStyleType = 'none';
-
-
 })
