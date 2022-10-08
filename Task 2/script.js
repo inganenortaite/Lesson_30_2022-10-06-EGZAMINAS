@@ -8,7 +8,6 @@ const clickMeButton = document.querySelector('#btn__element');
 let counter = 0;
 clickMeButton.addEventListener('click', () => {
     counter++; 
-    console.log(counter);
     const stateOutput = document.querySelector('#btn__state');
     stateOutput.textContent = counter;
 })
