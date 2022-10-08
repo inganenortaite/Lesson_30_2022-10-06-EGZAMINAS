@@ -32,6 +32,7 @@ function filterDogOwners(array) {
 
 console.log(filterDogOwners(users));
 
+
 function filterAdults(array) {
   let filterAdults = array.filter((user) => {
     return user.age >= 18;
