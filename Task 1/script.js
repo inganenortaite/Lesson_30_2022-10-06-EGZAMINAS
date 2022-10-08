@@ -13,12 +13,26 @@ const form = document.querySelector('form');
 console.log(form);
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    const outputElement = document.querySelector('#output');
     const searchInput = document.querySelector('#search').value;
-    console.dir(searchInput * 2.2046);
-    let kgToLb = searchInput * 2.2046;
-    let kgToG = searchInput / 0.001;
-    let kgToOz = searchInput * 35.274;
-    let lbOutput = document.querySelector('#output');
-    lbOutput.textContent = `Your weight is converted to ${kgToLb} lb; ${kgToG} g; ${kgToOz} oz`,
+
+    const kgToLb = (searchInput * 2.2046).toFixed(2);
+    const kgToG = (searchInput / 0.001).toFixed(2);
+    const kgToOz = (searchInput * 35.274).toFixed(2);
+
+    const h3Element = document.querySelector('.calculated');
+    const outputList = document.querySelector('.output-list');
+
+    h3Element.textContent = 'Your weight is converted to: ';
+    outputList.innerHTML = '<li>' + 'Pounds: ' + kgToLb + ' lb' + '<br>' + '</li>' + '<li>' + 'Grams: ' + kgToG + ' g' + '<br>' + '</li>' + '<li>' + 'Ounces: ' + kgToOz + ' oz' + '</li>';
+
     console.log(`Your weight is converted to ${kgToLb} lb; ${kgToG} g; ${kgToOz} oz.`);
+
+    outputElement.style.background = 'antiquewhite';
+    outputElement.style.width = '80%';
+    outputElement.style.padding = '20px';
+    outputElement.style.margin = 'auto';
+    outputList.style.listStyleType = 'none';
+
+
 })
