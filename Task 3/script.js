@@ -15,9 +15,24 @@ const ENDPOINT = 'https://api.github.com/users';
 const buttonShowUsers = document.querySelector('#btn');
 buttonShowUsers.addEventListener('click', () => {
     fetch(ENDPOINT)
-        .then(responce => responce.json())
+        .then(response => response.json())
         .then(data => {
             console.log(data);
-        })    
+            document.querySelector('#message').remove(); 
+
+            const messageText = '';
+            for (let i = 0; i < data.length; i++) {
+                console.log(data[i]);
+                console.log(data[i].login);
+                console.log(data[i].avatar_url);
+            }
+
+            
+
+            
+
+            console.log(messageText);
+        })   
 })
+
 

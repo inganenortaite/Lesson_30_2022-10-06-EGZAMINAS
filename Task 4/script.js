@@ -10,3 +10,15 @@ bent minimalų stilių;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'cars.json';
+
+fetch(ENDPOINT)
+    .then(response => response.json())
+    .then(cars => {
+        console.log(cars);
+
+        for (let i = 0; i < cars.length; i++) {
+            let car = cars[i];
+            console.log(car.brand);
+            console.log(car.models);
+        }
+    })    

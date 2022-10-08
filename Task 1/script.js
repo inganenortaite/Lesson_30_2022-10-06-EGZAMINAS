@@ -10,7 +10,6 @@ Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 ------------------------------------------------------------------- */
 
 const form = document.querySelector('form');
-console.log(form);
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const outputElement = document.querySelector('#output');
@@ -23,10 +22,10 @@ form.addEventListener('submit', (event) => {
     const h3Element = document.querySelector('.calculated');
     const outputList = document.querySelector('.output-list');
 
-    h3Element.textContent = 'Your weight is converted to: ';
+    h3Element.innerHTML = `Your weight is ${searchInput} kg converted to: `;
     outputList.innerHTML = '<li>' + 'Pounds: ' + kgToLb + ' lb' + '<br>' + '</li>' + '<li>' + 'Grams: ' + kgToG + ' g' + '<br>' + '</li>' + '<li>' + 'Ounces: ' + kgToOz + ' oz' + '</li>';
 
-    console.log(`Your weight is converted to ${kgToLb} lb; ${kgToG} g; ${kgToOz} oz.`);
+    console.log(`Your weight is ${searchInput} kg converted to ${kgToLb} lb; ${kgToG} g; ${kgToOz} oz.`);
 
     outputElement.style.background = 'antiquewhite';
     outputElement.style.width = '80%';
