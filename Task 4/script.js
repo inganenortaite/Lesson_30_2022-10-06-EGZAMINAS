@@ -20,5 +20,19 @@ fetch(ENDPOINT)
             let car = cars[i];
             console.log(car.brand);
             console.log(car.models);
+
+            let outputElement = document.querySelector('#output');
+
+            let cardBrand = document.querySelector('.card');
+            cardBrand.innerHTML += '<div>' + car.brand + '</div>';
+
+            let cardModels = document.querySelector('.card');
+            cardModels.innerHTML += '<div>' + car.models + '</div>';
+
+            outputElement.style.background = 'darkkhaki';
+            outputElement.style.width = '40%';
+            outputElement.style.padding = '20px';
+
         }
     })    
+
