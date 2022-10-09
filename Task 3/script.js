@@ -26,14 +26,23 @@ buttonShowUsers.addEventListener('click', () => {
                 console.log(data[i].login);
                 console.log(data[i].avatar_url);
 
+                let userElement = `<div class="user-item">
+                                    <h3 class="login-tittle">login</h3>
+                                    <img class="photo" src="nuoroda.jpg">
+                                   </div>`
+              
+
                 let user = document.querySelector('.user');
                 user.innerHTML += '<div>' + data[i].login + '</div>';
 
                 let avatar = document.querySelector('.avatar');
-                // let image = document.createElement('img');
-                // image.src = avatar; 
                 user.innerHTML += '<div>' + data[i].avatar_url + '</div>';
+
+
             }
+
+
+
 
             console.log(messageText);
         })   
