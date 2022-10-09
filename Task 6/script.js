@@ -29,14 +29,10 @@ function getUserAverageAge(arr) {
 
 console.log(getUserAverageAge(users));
 
-function getUsersNames(array) {
-  const usersName = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].name) {
-      usersName.push(array[i].name);
-    }
-  }
-  return usersName;
+function getUsersNamesMap (array) {
+  const usersNames = [];
+  array.map(user => usersNames.push(user.name));
+  return usersNames;
 }
 
-console.log(getUsersNames(users));
+console.log(getUsersNamesMap(users));
