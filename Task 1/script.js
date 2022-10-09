@@ -8,7 +8,6 @@ pamatyti jo pateikto svorio konvertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
-
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
