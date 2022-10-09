@@ -32,4 +32,7 @@ form.addEventListener('submit', (event) => {
     outputElement.style.padding = '20px';
     outputElement.style.margin = 'auto';
     outputList.style.listStyleType = 'none';
+    h3Element.style.fontSize = '25px';
+    h3Element.style.color = 'rgb(158, 56, 56)';
+    h3Element.style.marginBottom = '15px';
 })
