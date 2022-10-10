@@ -23,8 +23,8 @@ class Movie {
     }
 }
 
-let movieTitanic = new Movie('Titanic', 'James Cameron', 200000000);
-let movieBounty = new Movie('The Bounty Hunter', 'Andy Tennant', 40000000);
+let movieTitanic = new Movie('Titanic', 'James Cameron', 200_000_000);
+let movieBounty = new Movie('The Bounty Hunter', 'Andy Tennant', 40_000_000);
 
 console.log(movieTitanic.wasExpensive());
 console.log(movieBounty.wasExpensive());
