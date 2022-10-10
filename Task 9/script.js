@@ -15,7 +15,7 @@ class Movie {
     }
 
     wasExpensive = function() {
-        if (this.budget > 100000000) {
+        if (this.budget > 100_000_000) {
             return true;
         } else {
             return false;
