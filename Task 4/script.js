@@ -14,25 +14,28 @@ const ENDPOINT = 'cars.json';
 fetch(ENDPOINT)
     .then(response => response.json())
     .then(cars => {
-        console.log(cars);
 
-        for (let i = 0; i < cars.length; i++) {
-            let car = cars[i];
-            console.log(car.brand);
-            console.log(car.models);
+        const carsList = document.querySelector('#output');
 
-            let outputElement = document.querySelector('#output');
+        cars.map((car) => {
+            const carItem = document.createElement('div');
+            carItem.classList.add('car-item');
+            carsList.append(carItem);
 
-            let cardBrand = document.querySelector('.card');
-            cardBrand.innerHTML += '<div>' + car.brand + '</div>';
+            const brandTitle = document.createElement('h2');
+            brandTitle.classList.add('car-brand');
+            brandTitle.textContent = car.brand;
+            carItem.append(brandTitle);
 
-            let cardModels = document.querySelector('.card');
-            cardModels.innerHTML += '<div>' + car.models + '</div>';
+            const modelList = document.createElement('ul');
+            modelList.classList.add('car-models');
+            carItem.append(modelList);
 
-            outputElement.style.background = 'darkkhaki';
-            outputElement.style.width = '40%';
-            outputElement.style.padding = '20px';
-
-        }
+            car.models.map((model) => {
+                const modelItem = document.createElement('li');
+                modelItem.textContent = model;
+                modelList.append(modelItem);
+            })
+        })
     })    
 
