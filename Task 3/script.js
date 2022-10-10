@@ -17,26 +17,19 @@ buttonShowUsers.addEventListener('click', () => {
     fetch(ENDPOINT)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             document.querySelector('#message').remove(); 
 
-            const messageText = '';
+            let userList = document.querySelector('#output');
+
             for (let i = 0; i < data.length; i++) {
-                console.log(data[i]);
-                console.log(data[i].login);
-                console.log(data[i].avatar_url);
-               
-                let userInformation = document.querySelector('.user-item');
 
                 let userElement = `<div class="user-item">
-                                        <h3 class="login-tittle">${data[i].login}</h3>
+                                        <h3 class="login-title">${data[i].login}</h3>
                                         <img class="photo" src="${data[i].avatar_url}">
                                    </div>`
                     
-                userInformation.innerHTML += userElement;
+                userList.innerHTML += userElement;
             }
-
-            console.log(messageText);
         })   
 })
 
